@@ -1,0 +1,7 @@
+export default {
+    WHITE: '#FFFFFF',
+    DARK_GRAY: '#212121',
+    PRIMARY_TEXT_COLOR: '#303943',
+    STATS_TEXT_COLOR:'#444444',
+    HEADER_BG_COLOR: '#494949',
+}
