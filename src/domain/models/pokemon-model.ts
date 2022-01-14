@@ -8,6 +8,7 @@ export type PokemonModel = {
   name: string;
   image: string;
   types: string[];
+  colorNameSpecie: string;
   height?: number;
   weight?: number;
   stats?: Stats[];
