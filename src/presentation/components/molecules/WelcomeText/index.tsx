@@ -5,7 +5,7 @@ import SmileEmojiIcon from '@/presentation/assets/icons/smile_emoji.svg';
 const WelcomeText: React.FC = () => {
   return (
     <Container>
-      <Text>Bem Vindo!</Text>
+      <Text>Welcome!</Text>
       <SmileEmojiIcon />
     </Container>
   );
