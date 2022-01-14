@@ -4,7 +4,7 @@ import {Title, UserName} from './styles';
 const HomeTitleHeader: React.FC = () => {
   return (
     <Title>
-      Olá, <UserName>Ronaldinho</UserName>
+      Hi, <UserName>Ronaldinho</UserName>
     </Title>
   );
 };
