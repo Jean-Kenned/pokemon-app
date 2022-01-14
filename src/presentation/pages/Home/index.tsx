@@ -1,19 +1,18 @@
 import React from 'react';
-import {Container, Title} from './styles';
-import {useAppSelector, useAppDispatch} from '@/main/store/hooks';
-import {useGetPokemonListQuery} from '@/main/store/api/pokemon';
+import {Container, Content} from './styles';
+import {HomeHeader} from '@/presentation/components/organisms';
+import {PokemonList} from '@/presentation/components/templates';
+import {HomeTextTitle, Logo} from '@/presentation/components/atoms';
 
 const Home: React.FC = () => {
-
-  const {
-    data: pokemonsList,
-    isFetching,
-    isLoading,
-  } = useGetPokemonListQuery({limit: 10, offset: 0});
-
   return (
     <Container>
-      <Title>Home Page</Title>
+      <HomeHeader />
+      <Content>
+        <HomeTextTitle />
+        <PokemonList />
+        <Logo />
+      </Content>
     </Container>
   );
 };
