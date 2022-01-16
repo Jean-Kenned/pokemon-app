@@ -1,8 +1,12 @@
-import { PokemonModel } from '@/domain/models';
-import { pokemonApi } from '@/main/store/api';
-import { getIdFromUrl } from '@/main/utils';
-import { ListQueryParameters, RemoteListResponse, RemotePokemonItemListResponse, RemotePokemonSpecieResponse } from './listTypes'
-
+import {PokemonModel} from '@/domain/models';
+import {pokemonApi} from '@/main/store/api';
+import {getIdFromUrl} from '@/main/utils';
+import {
+  ListQueryParameters,
+  RemoteListResponse,
+  RemotePokemonItemListResponse,
+  RemotePokemonSpecieResponse,
+} from './listTypes';
 
 const pokemonListApi = pokemonApi.injectEndpoints({
   endpoints: builder => ({
@@ -12,21 +16,21 @@ const pokemonListApi = pokemonApi.injectEndpoints({
           `pokemon?limit=${_arg.limit}&offset=${_arg.offset}`,
         );
 
-        const { results } = pokemonListResult.data as RemoteListResponse;
+        const {results} = pokemonListResult.data as RemoteListResponse;
 
         const pokemonList = (await Promise.all(
           results.map(pokemonItem =>
             fetchWithBQ(`pokemon/${pokemonItem.name}`),
           ),
-        )) as { data: RemotePokemonItemListResponse }[];
+        )) as {data: RemotePokemonItemListResponse}[];
 
-        const idsSpecies = pokemonList.map(({ data: pokemon }) => {
+        const idsSpecies = pokemonList.map(({data: pokemon}) => {
           return getIdFromUrl(pokemon.species.url);
         });
 
         const speciesList = (await Promise.all(
           idsSpecies.map(id => fetchWithBQ(`pokemon-species/${id}`)),
-        )) as { data: RemotePokemonSpecieResponse }[];
+        )) as {data: RemotePokemonSpecieResponse}[];
 
         const formattedResponse = getFormattedResponse(
           pokemonList,
@@ -34,22 +38,21 @@ const pokemonListApi = pokemonApi.injectEndpoints({
         );
 
         if (!formattedResponse.length) {
-          return { status: 'FETCH_ERROR', data: [] as PokemonModel[] };
+          return {status: 'FETCH_ERROR', data: [] as PokemonModel[]};
         }
 
-        return { data: formattedResponse };
+        return {data: formattedResponse};
       },
     }),
   }),
   overrideExisting: false,
 });
 
-
 const getFormattedResponse = (
-  pokemonList: { data: RemotePokemonItemListResponse }[],
-  speciesList: { data: RemotePokemonSpecieResponse }[],
+  pokemonList: {data: RemotePokemonItemListResponse}[],
+  speciesList: {data: RemotePokemonSpecieResponse}[],
 ): PokemonModel[] => {
-  return pokemonList.map(({ data: remotePokemon }, index) => {
+  return pokemonList.map(({data: remotePokemon}, index) => {
     return {
       id: remotePokemon.id,
       name: remotePokemon.name,
@@ -60,4 +63,4 @@ const getFormattedResponse = (
   });
 };
 
-export const { useGetPokemonListQuery } = pokemonListApi;
+export const {useGetPokemonListQuery} = pokemonListApi;
