@@ -8,14 +8,20 @@ import {
 } from '@/presentation/components/atoms';
 import {TypeLabelsContainer} from '@/presentation/components/molecules';
 import {getNormalizedColorName} from '@/presentation/helpers';
+import {useNavigation} from '@react-navigation/native';
+import {PokemonProps} from '@/main/routes/routes.types';
 
 type Props = {
   pokemon: PokemonModel;
 };
 
 const PokemonCard: React.FC<Props> = ({pokemon}: Props) => {
+  const navigation = useNavigation<PokemonProps['navigation']>();
+
   return (
-    <Container color={getNormalizedColorName(pokemon.colorNameSpecie)}>
+    <Container
+      color={getNormalizedColorName(pokemon.colorNameSpecie)}
+      onPress={() => navigation.navigate('Pokemon', pokemon)}>
       <CardPokemonNumber number={pokemon.id} />
       <TextsWrapper>
         <CardPokemonName name={pokemon.name} />
