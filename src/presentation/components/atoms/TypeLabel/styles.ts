@@ -11,6 +11,7 @@ export const Container = styled.View`
   padding-horizontal: ${Spacing.SMALL};
   padding-vertical: ${Spacing.TINY};
   margin-vertical: ${Spacing.TINY};
+  margin-right: ${Spacing.TINY};
   border-radius: 32px;
   align-self: flex-start;
 `;
