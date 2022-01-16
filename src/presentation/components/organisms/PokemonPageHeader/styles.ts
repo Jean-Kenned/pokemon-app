@@ -1,5 +1,4 @@
-import {Fonts, getHexFromColorName, Spacing} from '@/presentation/helpers';
-import {Colors} from '@/presentation/helpers';
+import {getHexFromColorName, Spacing} from '@/presentation/helpers';
 import styled from 'styled-components/native';
 
 type ContainerProps = {
