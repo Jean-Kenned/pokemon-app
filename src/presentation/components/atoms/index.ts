@@ -6,3 +6,5 @@ export {default as CardPokemonImage} from './CardPokemonImage';
 export {default as CardPokemonName} from './CardPokemonName';
 export {default as CardPokemonNumber} from './CardPokemonNumber';
 export {default as TypeLabel} from './TypeLabel';
+export {default as PokemonName} from './PokemonName';
+export {default as PokemonNumber} from './PokemonNumber';
