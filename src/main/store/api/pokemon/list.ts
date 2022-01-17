@@ -59,6 +59,8 @@ const getFormattedResponse = (
       image: remotePokemon.sprites.other.home.front_default,
       types: remotePokemon.types.map(typeItem => typeItem.type.name),
       colorNameSpecie: speciesList[index].data.color.name,
+      height: remotePokemon.height,
+      weight: remotePokemon.weight,
     };
   });
 };

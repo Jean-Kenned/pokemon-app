@@ -27,6 +27,8 @@ export type RemotePokemonItemListResponse = {
   species: {
     url: string;
   };
+  weight: number;
+  height: number;
 };
 
 export type RemotePokemonSpecieResponse = {
