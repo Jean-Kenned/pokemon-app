@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  Container,
-  StatName,
-  BaseStat
-} from './styles';
+import {Container, StatName, BaseStat} from './styles';
 import {Stats} from '@/domain/models';
 import {StatItemGraph} from '@/presentation/components/molecules';
 
@@ -16,7 +12,7 @@ const PokemonStatItem: React.FC<Props> = ({stats}: Props) => {
     <Container>
       <StatName>{stats.name}</StatName>
       <BaseStat>{stats.baseStat}</BaseStat>
-      <StatItemGraph baseStat={stats.baseStat}/>
+      <StatItemGraph baseStat={stats.baseStat} />
     </Container>
   );
 };

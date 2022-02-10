@@ -1,4 +1,4 @@
-import {Colors, Fonts, Spacing} from '@/presentation/helpers';
+import {Colors} from '@/presentation/helpers';
 import styled from 'styled-components/native';
 
 type BaseStatBarProps = {

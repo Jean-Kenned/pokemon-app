@@ -1,7 +1,6 @@
 import {Fonts, Spacing, Colors} from '@/presentation/helpers';
 import styled from 'styled-components/native';
 
-
 export const Container = styled.View`
   padding-vertical: ${Spacing.SMALL};
   flex-direction: row;
