@@ -61,6 +61,9 @@ const getFormattedResponse = (
       colorNameSpecie: speciesList[index].data.color.name,
       height: remotePokemon.height,
       weight: remotePokemon.weight,
+      stats: remotePokemon.stats.map(statsItem => {
+        return {name: statsItem.stat.name, baseStat: statsItem.base_stat};
+      }),
     };
   });
 };

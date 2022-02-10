@@ -5,6 +5,7 @@ import {
   PokemonPageHeader,
   PokemonMainCharacteristics,
 } from '@/presentation/components/organisms';
+import {StatsList} from '@/presentation/components/templates';
 
 const Pokemon: React.FC<PokemonProps> = ({route}: PokemonProps) => {
   const {params: pokemon} = route;
@@ -16,8 +17,10 @@ const Pokemon: React.FC<PokemonProps> = ({route}: PokemonProps) => {
         <ImageWrapper>
           <Image source={{uri: pokemon.image}} />
         </ImageWrapper>
-        <Content>
+        <Content
+          contentContainerStyle={{paddingTop: 56, paddingHorizontal: 16}}>
           <PokemonMainCharacteristics pokemon={pokemon} />
+          <StatsList stats={pokemon.stats} />
         </Content>
       </Body>
     </Container>

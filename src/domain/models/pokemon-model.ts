@@ -1,6 +1,6 @@
 export type Stats = {
   name: string;
-  baseStat: string;
+  baseStat: number;
 };
 
 export type PokemonModel = {
@@ -11,5 +11,5 @@ export type PokemonModel = {
   colorNameSpecie: string;
   height: number;
   weight: number;
-  stats?: Stats[];
+  stats: Stats[];
 };

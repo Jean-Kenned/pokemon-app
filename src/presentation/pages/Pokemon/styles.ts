@@ -1,4 +1,4 @@
-import {Colors, Spacing} from '@/presentation/helpers';
+import {Colors} from '@/presentation/helpers';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
@@ -25,8 +25,7 @@ export const ImageWrapper = styled.View`
   margin-top: -200px;
 `;
 
-export const Content = styled.View`
+export const Content = styled.ScrollView`
   flex: 1;
-  padding: ${Spacing.DEFAULT};
-  padding-top: 56px;
+  z-index: -1;
 `;
