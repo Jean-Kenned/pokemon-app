@@ -75,7 +75,6 @@ const getFormattedFlavorText = (remoteFlavorTextEntries: any[]): string => {
   const remoteFlavorTextEntry = remoteFlavorTextEntries.find(
     flavorTextEntry => flavorTextEntry.version.name === 'ruby',
   );
-  console.log(remoteFlavorTextEntry);
   return remoteFlavorTextEntry.flavor_text.replace(/\n/g, '');
 };
 
