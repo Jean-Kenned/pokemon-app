@@ -24,10 +24,9 @@ const PokemonMainCharacteristic: React.FC<Props> = ({pokemon}: Props) => {
         value={`${pokemon.weight} kg`}
       />
       <Separator />
-      {/* TODO: Mocked Value */}
       <PokemonMainCharacteristicCard
         label="Main Power"
-        value="Chicote de Vinha"
+        value={pokemon.mainPower}
       />
     </Container>
   );

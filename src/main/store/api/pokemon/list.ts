@@ -7,6 +7,7 @@ import {
   RemotePokemonItemListResponse,
   RemotePokemonSpecieResponse,
   RemoteFlavorTextEntry,
+  RemoteMoves,
 } from './listTypes';
 
 const pokemonListApi = pokemonApi.injectEndpoints({
@@ -17,21 +18,21 @@ const pokemonListApi = pokemonApi.injectEndpoints({
           `pokemon?limit=${_arg.limit}&offset=${_arg.offset}`,
         );
 
-        const {results} = pokemonListResult.data as RemoteListResponse;
+        const { results } = pokemonListResult.data as RemoteListResponse;
 
         const pokemonList = (await Promise.all(
           results.map(pokemonItem =>
             fetchWithBQ(`pokemon/${pokemonItem.name}`),
           ),
-        )) as {data: RemotePokemonItemListResponse}[];
+        )) as { data: RemotePokemonItemListResponse }[];
 
-        const idsSpecies = pokemonList.map(({data: pokemon}) => {
+        const idsSpecies = pokemonList.map(({ data: pokemon }) => {
           return getIdFromUrl(pokemon.species.url);
         });
 
         const speciesList = (await Promise.all(
           idsSpecies.map(id => fetchWithBQ(`pokemon-species/${id}`)),
-        )) as {data: RemotePokemonSpecieResponse}[];
+        )) as { data: RemotePokemonSpecieResponse }[];
 
         const formattedResponse = getFormattedResponse(
           pokemonList,
@@ -39,10 +40,10 @@ const pokemonListApi = pokemonApi.injectEndpoints({
         );
 
         if (!formattedResponse.length) {
-          return {status: 'FETCH_ERROR', data: [] as PokemonModel[]};
+          return { status: 'FETCH_ERROR', data: [] as PokemonModel[] };
         }
 
-        return {data: formattedResponse};
+        return { data: formattedResponse };
       },
     }),
   }),
@@ -68,6 +69,7 @@ const getFormattedResponse = (
       mainDescription: getFormattedFlavorText(
         speciesList[index].data.flavor_text_entries,
       ),
+      mainPower: getMainPower(remotePokemon.moves),
     };
   });
 };
@@ -83,4 +85,27 @@ const getFormattedFlavorText = (
     : '';
 };
 
-export const {useGetPokemonListQuery} = pokemonListApi;
+const getMainPower = (
+  remoteMoves: RemoteMoves[],
+): string => {
+
+  let initialValues: { move: RemoteMoves, levelLearnedSummed: number }[] = [];
+
+  let movesWithLevelLearnedSummed = remoteMoves.reduce((accumulator, currentMove) => {
+    const levelLearnedSummed = currentMove.version_group_details.reduce(
+      (innerAccumulator, currentVersioGroupDetails) => currentVersioGroupDetails.level_learned_at + innerAccumulator, 0
+    );
+    accumulator.push({ move: currentMove, levelLearnedSummed: levelLearnedSummed });
+    return accumulator;
+
+  }, initialValues);
+
+  const moveWithBiggerLevelLearned = movesWithLevelLearnedSummed.reduce((prevMove, currentMove) => {
+    return prevMove.levelLearnedSummed > currentMove.levelLearnedSummed ? prevMove : currentMove;
+  });
+
+  return moveWithBiggerLevelLearned.move.move.name;
+};
+
+
+export const { useGetPokemonListQuery } = pokemonListApi;

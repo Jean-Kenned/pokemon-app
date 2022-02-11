@@ -7,6 +7,17 @@ export type RemoteListResponse = {
   results: {name: string}[];
 };
 
+export type RemoteMoves = {
+  move: {
+    name: string;
+  };
+  version_group_details: [
+    {
+      level_learned_at: number;
+    },
+  ];
+};
+
 export type RemotePokemonItemListResponse = {
   id: number;
   name: string;
@@ -37,6 +48,7 @@ export type RemotePokemonItemListResponse = {
       };
     },
   ];
+  moves: RemoteMoves[];
 };
 
 export type RemoteFlavorTextEntry = {

@@ -13,4 +13,5 @@ export type PokemonModel = {
   weight: number;
   stats: Stats[];
   mainDescription: string;
+  mainPower: string;
 };
