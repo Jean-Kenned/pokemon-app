@@ -64,8 +64,19 @@ const getFormattedResponse = (
       stats: remotePokemon.stats.map(statsItem => {
         return {name: statsItem.stat.name, baseStat: statsItem.base_stat};
       }),
+      mainDescription: getFormattedFlavorText(
+        speciesList[index].data.flavor_text_entries,
+      ),
     };
   });
+};
+
+const getFormattedFlavorText = (remoteFlavorTextEntries: any[]): string => {
+  const remoteFlavorTextEntry = remoteFlavorTextEntries.find(
+    flavorTextEntry => flavorTextEntry.version.name === 'ruby',
+  );
+  console.log(remoteFlavorTextEntry);
+  return remoteFlavorTextEntry.flavor_text.replace(/\n/g, '');
 };
 
 export const {useGetPokemonListQuery} = pokemonListApi;

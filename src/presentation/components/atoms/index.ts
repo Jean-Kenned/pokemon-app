@@ -8,3 +8,4 @@ export {default as CardPokemonNumber} from './CardPokemonNumber';
 export {default as TypeLabel} from './TypeLabel';
 export {default as PokemonName} from './PokemonName';
 export {default as PokemonNumber} from './PokemonNumber';
+export {default as DefaultText} from './DefaultText';

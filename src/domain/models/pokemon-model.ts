@@ -12,4 +12,5 @@ export type PokemonModel = {
   height: number;
   weight: number;
   stats: Stats[];
+  mainDescription: string;
 };
