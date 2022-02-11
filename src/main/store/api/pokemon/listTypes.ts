@@ -39,16 +39,16 @@ export type RemotePokemonItemListResponse = {
   ];
 };
 
+export type RemoteFlavorTextEntry = {
+  flavor_text: string;
+  version: {
+    name: string;
+  };
+};
+
 export type RemotePokemonSpecieResponse = {
   color: {
     name: string;
   };
-  flavor_text_entries: [
-    {
-      flavor_text: string;
-      version: {
-        name: string;
-      };
-    },
-  ];
+  flavor_text_entries: RemoteFlavorTextEntry[];
 };

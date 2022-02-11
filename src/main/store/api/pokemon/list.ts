@@ -6,6 +6,7 @@ import {
   RemoteListResponse,
   RemotePokemonItemListResponse,
   RemotePokemonSpecieResponse,
+  RemoteFlavorTextEntry,
 } from './listTypes';
 
 const pokemonListApi = pokemonApi.injectEndpoints({
@@ -71,11 +72,15 @@ const getFormattedResponse = (
   });
 };
 
-const getFormattedFlavorText = (remoteFlavorTextEntries: any[]): string => {
+const getFormattedFlavorText = (
+  remoteFlavorTextEntries: RemoteFlavorTextEntry[],
+): string => {
   const remoteFlavorTextEntry = remoteFlavorTextEntries.find(
     flavorTextEntry => flavorTextEntry.version.name === 'ruby',
   );
-  return remoteFlavorTextEntry.flavor_text.replace(/\n/g, '');
+  return remoteFlavorTextEntry
+    ? remoteFlavorTextEntry.flavor_text.replace(/\n/g, '')
+    : '';
 };
 
 export const {useGetPokemonListQuery} = pokemonListApi;
