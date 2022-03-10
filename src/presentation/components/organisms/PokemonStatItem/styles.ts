@@ -20,3 +20,8 @@ export const BaseStat = styled.Text`
   color: ${Colors.DARK_GRAY};
   flex: 1;
 `;
+
+export const StatItemGraphWrapper = styled.View`
+  flex: 3;
+`
+

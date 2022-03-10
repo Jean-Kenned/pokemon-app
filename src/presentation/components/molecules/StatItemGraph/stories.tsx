@@ -1,13 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { number } from '@storybook/addon-knobs';
+import {storiesOf} from '@storybook/react-native';
+
 import StatItemGraph from '.';
-import documents from './notes.md'
+import { number } from '@storybook/addon-knobs';
+import DefaultDecorator from '@/../storybook/defaultDecorator'
 
 storiesOf('StatItemGraph', module)
-  .add('default',
-    () => <StatItemGraph baseStat={number('percentage', 50)}/>
-    , {
-      notes: documents
-    }
-  )
+.addDecorator(DefaultDecorator)
+.add('default', () => <StatItemGraph baseStat={number('percentage',50)}/>);
