@@ -10,7 +10,7 @@ module.exports = {
           '@': './src',
         },
       },
-      'inline-react-svg'
+      'inline-react-svg',
     ],
   ],
 };

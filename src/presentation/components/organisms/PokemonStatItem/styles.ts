@@ -23,5 +23,5 @@ export const BaseStat = styled.Text`
 
 export const StatItemGraphWrapper = styled.View`
   flex: 3;
-`
+`;
 
