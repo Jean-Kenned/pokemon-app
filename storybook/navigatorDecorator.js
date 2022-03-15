@@ -28,4 +28,4 @@ const ReactNavigationDecorator = (story) => {
   );
 };
 
-export default ReactNavigationDecorator
+export default ReactNavigationDecorator;
