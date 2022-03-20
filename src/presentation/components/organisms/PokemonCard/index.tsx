@@ -20,6 +20,7 @@ const PokemonCard: React.FC<Props> = ({pokemon}: Props) => {
 
   return (
     <Container
+      testID="card-container"
       color={getNormalizedColorName(pokemon.colorNameSpecie)}
       onPress={() => navigation.navigate('Pokemon', pokemon)}>
       <CardPokemonNumber number={pokemon.id} />

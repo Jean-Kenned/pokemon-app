@@ -43,6 +43,8 @@
     "@storybook/addon-ondevice-knobs": "^5.3.25",
     "@storybook/react-native": "^5.3.25",
     "@storybook/react-native-server": "^5.3.23",
+    "@testing-library/jest-native": "^4.0.4",
+    "@testing-library/react-native": "^9.0.0",
     "@types/jest": "^26.0.23",
     "@types/react": "^17.0.39",
     "@types/react-native": "^0.67.1",
@@ -68,6 +70,7 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"],
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -75,11 +78,17 @@
       "jsx",
       "json",
       "node"
+    ],
+    "testMatch": [
+      "<rootDir>/__tests__/**/*.(test).{js,jsx,ts,tsx}",
+      "<rootDir>/__tests__/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
     ]
   },
   "config": {
     "react-native-storybook-loader": {
-      "searchDir": ["./src/presentation/components"],
+      "searchDir": [
+        "./src/presentation/components"
+      ],
       "pattern": "**/*stories.tsx",
       "outputFile": "./storybook/storyLoader.js"
     }
