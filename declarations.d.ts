@@ -17,7 +17,7 @@ declare namespace jest {
   }
 
   type Value = string | number | RegExp | AsymmetricMatcher | undefined;
-  
+
   interface Options {
     media?: string
     modifier?: string
