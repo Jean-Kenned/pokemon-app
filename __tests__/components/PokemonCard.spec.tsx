@@ -2,6 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import PokemonCard from '@/presentation/components/organisms/PokemonCard';
 import { makePokemonFake } from './faker';
+import { getHexFromColorName } from '@/presentation/helpers';
 
 const mockedNavigate = jest.fn();
 
@@ -39,5 +40,11 @@ describe('Pokemon Card Component', () => {
     fireEvent.press(getByTestId('card-container'));
     expect(mockedNavigate).toHaveBeenCalled();
   });
+
+  it('should show the correct background color', () => {
+    const { getByTestId } = render(<PokemonCard pokemon={makePokemonFake()} />);
+    expect(getByTestId('card-container')).toHaveStyleRule('background-color',getHexFromColorName('green', 0.7));
+  });
+
 
 });
