@@ -10,10 +10,10 @@ const PokemonBackAndFavoriteButtons: React.FC = () => {
 
   return (
     <Container>
-      <BackButtonWrapper onPress={() => navigation.goBack()}>
-        <BackIcon />
+      <BackButtonWrapper onPress={() => navigation.goBack()} testID="back-icon-wrapper">
+        <BackIcon testID="back-icon"/>
       </BackButtonWrapper>
-      <HeartIcon />
+      <HeartIcon testID="heart-icon"/>
     </Container>
   );
 };
