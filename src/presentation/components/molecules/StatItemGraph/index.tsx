@@ -8,7 +8,7 @@ type Props = {
 const StatItemGraph: React.FC<Props> = ({baseStat}: Props) => {
   return (
     <Container>
-      <BaseStatBar baseStat={baseStat} />
+      <BaseStatBar baseStat={baseStat} testID="base-stat-bar"/>
     </Container>
   );
 };
