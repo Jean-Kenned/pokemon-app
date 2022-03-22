@@ -6,7 +6,7 @@ import {HomeTextTitle, Logo} from '@/presentation/components/atoms';
 
 const Home: React.FC = () => {
   return (
-    <Container>
+    <Container testID="home-page">
       <HomeHeader />
       <Content>
         <HomeTextTitle />
