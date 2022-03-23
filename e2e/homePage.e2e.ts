@@ -10,6 +10,9 @@ describe('Home Page', () => {
   it('should show header', async () => {
     await expect(element(by.id('home-header'))).toBeVisible();
   });
+  it('should load the first page of cards', async () => {
+    await expect(element(by.id('card-container-1'))).toBeVisible();
+  });
 });
 
 

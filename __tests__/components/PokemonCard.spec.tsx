@@ -37,13 +37,13 @@ describe('Pokemon Card Component', () => {
 
   it('should call the navigate function when clicked', () => {
     const { getByTestId } = render(<PokemonCard pokemon={makePokemonFake()} />);
-    fireEvent.press(getByTestId('card-container'));
+    fireEvent.press(getByTestId('card-container-1'));
     expect(mockedNavigate).toHaveBeenCalled();
   });
 
   it('should show the correct background color', () => {
     const { getByTestId } = render(<PokemonCard pokemon={makePokemonFake()} />);
-    expect(getByTestId('card-container')).toHaveStyleRule('background-color',getHexFromColorName('green', 0.7));
+    expect(getByTestId('card-container-1')).toHaveStyleRule('background-color',getHexFromColorName('green', 0.7));
   });
 
 
