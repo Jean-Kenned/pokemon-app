@@ -25,6 +25,7 @@ declare namespace jest {
   }
 
   interface Matchers<R> {
-    toHaveStyleRule(property: string, value?: Value, options?: Options): R
+    toHaveStyleRule(property: string, value?: Value, options?: Options): R;
+    toBeVisible(): R;
   }
 }

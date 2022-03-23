@@ -8,7 +8,7 @@ import {
 
 const HomeHeader: React.FC = () => {
   return (
-    <Container>
+    <Container testID="home-header">
       <TextsWrapper>
         <HomeTitleHeader />
         <WelcomeText />
