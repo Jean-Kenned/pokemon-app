@@ -1,3 +1,5 @@
+import { device,by, element } from 'detox';
+
 describe('Home Page', () => {
   beforeAll(async () => {
     await device.launchApp();
