@@ -5,13 +5,13 @@ import { store } from '@/main/store';
 import StorybookUIRoot from '@/../storybook';
 import Config from 'react-native-config';
 import { useEffect } from 'react';
-import SplashScreen from 'react-native-splash-screen'
+import SplashScreen from 'react-native-splash-screen';
 
 const App: React.FC = () => {
 
   useEffect(() => {
     SplashScreen.hide();
-  }, [])
+  }, []);
 
   return (
     <Provider store={store}>

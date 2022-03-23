@@ -1,5 +1,5 @@
-import { cleanup } from "detox";
-import * as adapter from "detox/runners/jest/adapter";
+import { cleanup } from 'detox';
+import * as adapter from 'detox/runners/jest/adapter';
 
 beforeEach(async () => {
   await adapter.beforeEach();
