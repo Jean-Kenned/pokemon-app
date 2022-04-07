@@ -18,8 +18,6 @@ import {DefaultText} from '@/presentation/components/atoms';
 const Pokemon: React.FC<PokemonProps> = ({route}: PokemonProps) => {
   const {params: pokemon} = route;
 
-  console.log(pokemon);
-
   return (
     <Container>
       <PokemonPageHeader pokemon={pokemon} />
