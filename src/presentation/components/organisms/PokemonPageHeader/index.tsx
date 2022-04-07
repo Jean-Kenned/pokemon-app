@@ -14,7 +14,7 @@ type Props = {
 
 const PokemonPageHeader: React.FC<Props> = ({pokemon}: Props) => {
   return (
-    <Container color={getNormalizedColorName(pokemon.colorNameSpecie)}>
+    <Container color={getNormalizedColorName(pokemon.colorNameSpecie)} testID="pokemon-page-header">
       <PokemonBackAndFavoriteButtons />
       <PokemonNameAndNumber pokemon={pokemon} />
       <TypeLabelsWrapper>

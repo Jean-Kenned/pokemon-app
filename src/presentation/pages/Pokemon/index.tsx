@@ -19,11 +19,11 @@ const Pokemon: React.FC<PokemonProps> = ({route}: PokemonProps) => {
   const {params: pokemon} = route;
 
   return (
-    <Container>
+    <Container testID="pokemon-page">
       <PokemonPageHeader pokemon={pokemon} />
       <Body>
         <ImageWrapper>
-          <Image source={{uri: pokemon.image}} />
+          <Image source={{uri: pokemon.image}} testID="pokemon-image"/>
         </ImageWrapper>
         <Content
           contentContainerStyle={{paddingTop: 56, paddingHorizontal: 16}}>
