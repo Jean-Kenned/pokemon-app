@@ -44,6 +44,7 @@ const PokemonList: React.FC = () => {
     <IndicatorLoading />
   ) : (
     <FlatList
+      testID='pokemon-list'
       style={{marginTop: 16}}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{paddingBottom: 24}}
