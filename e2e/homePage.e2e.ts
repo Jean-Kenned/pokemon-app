@@ -16,7 +16,7 @@ describe('Home Page', () => {
     await expect(element(by.id('card-container-1'))).toBeVisible();
   });
   it('should scroll down and load more cards', async () => {
-    await element(by.id('pokemon-list')).scroll(800, 'down');
+    await element(by.id('pokemon-list')).scroll(1200, 'down');
     await expect(element(by.id('card-container-12'))).toBeVisible();
   });
   it('should scroll to the top of the page', async () => {
