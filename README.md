@@ -34,6 +34,10 @@ yarn android
 
 To execute the **Storybook** you must change STORYBOOK_UI to TRUE in the .env file and execute the above command again.
 
+### Running Storybook...
+
+https://user-images.githubusercontent.com/26507635/165368431-f8db1e76-893c-4b40-b0a5-aee37e08fa72.mp4
+
 
 ## E2E tests
 
