@@ -64,9 +64,7 @@ To phisical android device:
 e2e:test:android
 ```
 
-<video width="320" height="240" controls>
-  <source src="./readme/e2e_tests.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/26507635/165365402-8e1b714d-7691-4eda-bb71-d2580c346ac8.mp4
 
 ## Unit tests
 
