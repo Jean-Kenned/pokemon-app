@@ -63,6 +63,7 @@ To phisical android device:
 ```console
 e2e:test:android
 ```
+### Running e2e Tests...
 
 https://user-images.githubusercontent.com/26507635/165365402-8e1b714d-7691-4eda-bb71-d2580c346ac8.mp4
 
@@ -74,6 +75,9 @@ To run the unit tests using **Jest** execute:
 ```console
 yarn test
 ```
+
+### Running unit Tests...
+![unit_tests](https://user-images.githubusercontent.com/26507635/165366105-5551f576-9e2b-4a06-b069-acc5e7097c45.gif)
 
 ## Lint
 
