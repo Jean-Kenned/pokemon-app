@@ -16,6 +16,8 @@ It consists in two simple pages: A page that contains a Pokemon list and other p
 * Jest to execute unit tests.
 * Storybook to document the components.
 * Eslint to establish patterns of code.
+* Husky to execute lint-stage and unit tests in git pre commit hook.
+* git-commit-msg-linter to guarantee the use of convencional commits. 
 
 ## Executing the application
 
