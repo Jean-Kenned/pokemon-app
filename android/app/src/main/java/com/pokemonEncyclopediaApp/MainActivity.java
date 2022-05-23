@@ -1,4 +1,4 @@
-package com.pokemonapp;
+package com.pokemonEncyclopediaApp;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle; 

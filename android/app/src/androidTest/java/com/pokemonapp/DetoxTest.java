@@ -1,4 +1,4 @@
-package com.pokemonapp; // Trocar pelo no do Projeto.
+package com.pokemonEncyclopediaApp; // Trocar pelo no do Projeto.
 
 import com.wix.detox.Detox;
 import com.wix.detox.config.DetoxConfig;
@@ -22,7 +22,7 @@ public class DetoxTest {
         DetoxConfig detoxConfig = new DetoxConfig();
         detoxConfig.idlePolicyConfig.masterTimeoutSec = 90;
         detoxConfig.idlePolicyConfig.idleResourceTimeoutSec = 60;
-        detoxConfig.rnContextLoadTimeoutSec = (com.pokemonapp.BuildConfig.DEBUG ? 180 : 60);
+        detoxConfig.rnContextLoadTimeoutSec = (com.pokemonEncyclopediaApp.BuildConfig.DEBUG ? 180 : 60);
 
         Detox.runTests(mActivityRule, detoxConfig);
     }
